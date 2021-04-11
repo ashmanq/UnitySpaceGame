@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
     float xMax;
     float yMin;
     float yMax;
-    float level;
 
     // Start is called before the first frame update
     void Start()
@@ -116,5 +115,11 @@ public class Player : MonoBehaviour
         explosion.GetComponent<ParticleSystem>().Play();
         Destroy(explosion, durationOfExplosion);
 
+    }
+
+
+    public int GetHealth()
+    {
+        return Mathf.Clamp(health, 0, 1000000);
     }
 }
